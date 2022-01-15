@@ -1,0 +1,21 @@
+.font1{
+    font-size: 650%;
+    text-shadow: rgb(0, 0, 0) 15px 15px ;
+        text-align: center;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .font2{
+        font-size: 300%;
+        text-shadow: rgb(0, 0, 0) 15px 15px ;
+            text-align: center;
+          color: white;
+          font-family: 'Courier New', Courier, monospace;
+        }
+
+#fonthelp{
+  font-size: 250%;
+  text-align: center;
+  color: white;
+
+}
