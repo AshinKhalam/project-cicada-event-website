@@ -6,46 +6,47 @@
 -->
 <html>
 	<head>
-		<title>project cicada</title>
+		<title>Project Cicada</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="font.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h2 class="major">Log in</h1>
-							<!--LOGIN PAGE-->
-									<form name="login">
-										Username<input type="text" name="userid"/>
-										<br>
-										Password<input type="password" name="pswrd"/>
-										<br>
-										<input type="button"  onclick="check(this.form)" value="Login"/>  
-										<input type="reset" value="Cancel" href="THMorse1.html">
-									</form>
-									<script language="javascript">
-										function check(form) { /*function to check userid & password*/
-											/*the following code checkes whether the entered userid and password are matching*/
-											if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") {
-												window.open('THcong.html')/*opens the target page while Id & password matches*/
-											}
-											else {
-												alert("TheInspectSaysItAll")/*displays error message*/
-											}
-										}
-									</script>
-									
-							
-						</div>
-					</section>
-
+<div id="fonthelp"><!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+			<h2 class="major">Log in</h1>
+			<!--LOGIN PAGE-->
+					<form name="login">
+						Username<input type="text" name="userid"/>
+						<br>
+						Password<input type="password" name="pswrd"/>
+						<br>
+						<input type="button"  onclick="check(this.form)" value="Login"/>  
+						<input type="reset" value="Cancel" href="THMorse1.html">
+					</form>
+					<script language="javascript">
+						function check(form) { /*function to check userid & password*/
+							/*the following code checkes whether the entered userid and password are matching*/
+							if(form.userid.value == "Juamtano" && form.pswrd.value == "Jumapili") {
+								window.open('THcong.html')/*opens the target page while Id & password matches*/
+							}
+							else {
+								alert("TheInspectSaysItAll")/*displays error message*/
+							}
+						}
+					</script>
+					
+			
+		</div>
+	</section>
+</div>
+				
 			</div>
 
 		
