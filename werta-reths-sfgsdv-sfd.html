@@ -34,14 +34,30 @@
 										<input type="reset" value="Cancel">
 									</form>
 									<script language="javascript">
-										function check(form) { /*function to check userid & password*/
-											/*the following code checkes whether the entered userid and password are matching*/
-											if(form.pswrd.value == "neuralink") {
-												window.open('THAscii.html')/*opens the target page while Id & password matches*/
+										async function postData(url = '', data = {}) {
+											const response = await fetch(url, {
+												method: 'POST', 
+												mode: 'cors', 
+												cache: 'no-cache', 
+												credentials: 'same-origin', 
+												headers: {
+												'Content-Type': 'application/json'
+												},
+												redirect: 'follow', 
+												referrerPolicy: 'no-referrer', 
+												body: JSON.stringify(data) 
+											});
+											return response.json(); 
 											}
-											else {
-												alert("Try Again!!")/*displays error message*/
-											}
+										function check(form) { 
+											postData(`ttps://stark-citadel-51007.herokuapp.com/`, {
+													"game":"charades",
+													"password":form.pswrd.value
+												}).then(data=>{
+													window.open(data.file+'.html')
+												})
+												.catch(data=>alert("Try again"))
+											
 										}
 									</script>
 									<h6>Credits: <br>

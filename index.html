@@ -26,16 +26,33 @@
 						Password<input type="password" name="pswrd"/>
 						<br>
 						<input type="button"  onclick="check(this.form)" value="Login"/>  
+						<input type="reset" value="Cancel" href="THMorse1.html">
 					</form>
 					<script language="javascript">
-						function check(form) { /*function to check userid & password*/
-							/*the following code checkes whether the entered userid and password are matching*/
-							if(form.userid.value == "Juamtano" && form.pswrd.value == "Jumapili") {
-								window.open('THcong.html')/*opens the target page while Id & password matches*/
+						async function postData(url = '', data = {}) {
+							const response = await fetch(url, {
+								method: 'POST', 
+								mode: 'cors', 
+								cache: 'no-cache', 
+								credentials: 'same-origin', 
+								headers: {
+								'Content-Type': 'application/json'
+								},
+								redirect: 'follow', 
+								referrerPolicy: 'no-referrer', 
+								body: JSON.stringify(data) 
+							});
+							return response.json(); 
 							}
-							else {
-								alert("TheInspectSaysItAll")/*displays error message*/
-							}
+						function check(form) { 
+							postData(`https://stark-citadel-51007.herokuapp.com/`, {
+									"game":form.userid.value,
+									"password":form.pswrd.value
+								}).then(data=>{
+									window.open("THCong.html")
+								})
+								.catch(data=>alert("The Inspect says it all"))
+							
 						}
 					</script>
 					</div>
