@@ -14,15 +14,16 @@
       }
 
 #fonthelp{
-font-size: 150%;
+font-size: 125%;
 text-align: center;
 color: white;
 font-family: 'Courier New', Courier, monospace;
 line-height: 1.75;
 font-weight: normal;
+
 }
 #fonthelp2{
-font-size: 150%;
+font-size: 115%;
 text-align: left;
 color: white;
 font-family: 'Courier New', Courier, monospace;

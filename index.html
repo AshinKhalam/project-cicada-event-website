@@ -3,78 +3,88 @@
 	your_hint_is_somewhere_here.look_closely
 -->
 <html>
-	<head>
-		<title>Project Cicada</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="font.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-<!-- Main -->
-	<section id="main" class="wrapper">
-		<div class="inner">
-			<div id="fonthelp"><h2 class="major">Log in</h1></div>
+<head>
+	<title>Project Cicada</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="font.css">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<div id="fonthelp">
+					<h2 class="major">Log in</h1>
+				</div>
 				<!--WERE YOU LOOKING FOR THIS ??????????? Morse--><a href="THMorse1.html"></a>
-			<!--LOGIN PAGE--><div id="fonthelp2">
+				<!--LOGIN PAGE-->
+				<div id="fonthelp2" style="  width:100%;
+				display: flex;
+				justify-content: center;">
 					<form name="login">
-						Username<input type="text" name="userid"/>
+						Username<input type="text" name="userid" />
 						<br>
-						Password<input type="password" name="pswrd"/>
+						Password<input type="password" name="pswrd" />
 						<br>
-						<input type="button"  onclick="check(this.form)" value="Login"/>  
+						<input type="button" onclick="check(this.form)" value="Login" />
 						<input type="reset" value="Cancel" href="THMorse1.html">
 					</form>
 					<script language="javascript">
 						async function postData(url = '', data = {}) {
 							const response = await fetch(url, {
-								method: 'POST', 
-								mode: 'cors', 
-								cache: 'no-cache', 
-								credentials: 'same-origin', 
+								method: 'POST',
+								mode: 'cors',
+								cache: 'no-cache',
+								credentials: 'same-origin',
 								headers: {
-								'Content-Type': 'application/json'
+									'Content-Type': 'application/json'
 								},
-								redirect: 'follow', 
-								referrerPolicy: 'no-referrer', 
-								body: JSON.stringify(data) 
+								redirect: 'follow',
+								referrerPolicy: 'no-referrer',
+								body: JSON.stringify(data)
 							});
-							return response.json(); 
-							}
-						function check(form) { 
+							return response.json();
+						}
+						function check(form) {
 							postData(`https://stark-citadel-51007.herokuapp.com/`, {
-									"game":form.userid.value,
-									"password":form.pswrd.value
-								}).then(data=>{
-									window.open("THCong.html")
-								})
-								.catch(data=>alert("The Inspect says it all"))
-							
+								"game": form.userid.value,
+								"password": form.pswrd.value
+							}).then(data => {
+								window.open("THCong.html")
+							})
+								.catch(data => alert("The Inspect says it all"))
+
 						}
 					</script>
-					</div>
-					
-			
-		</div>
-	</section>
-</div>
-				
+				</div>
+
+
 			</div>
+		</section>
+	</div>
 
-		
+	</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
