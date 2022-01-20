@@ -3192,7 +3192,7 @@ input, select, textarea {
 /* Wrapper */
 
 	.inner{position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -3875,4 +3875,7 @@ input, select, textarea {
 			height: 100%;
 		}
 		
-		
+
+		@media screen and (min-width: 1280px) {
+	body{overflow-y: hidden;}
+		}
