@@ -1,76 +1,90 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Project Cicada:Task 1</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="font.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-	
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Project Cicada:Task 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="font.css">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major"><div class="glitch" data-text="Task 1">Task 1</div> </h1>
-							<div id="fonthelp">Decode the following and type below!	</div>
-							<div id="fonthelp">-.-. .- .-. -.. .. -. .- .-..  -- . .--. .... .. ... - ---</div>
-							<!--LOGIN PAGE-->
-									<form name="login">
-										Your Answer	<h6>*Includes Spaces</h6><input type="password" name="pswrd"/>
-										<br>
-										<input type="button"  onclick="check(this.form)" value="Submit"/>  
-										<input type="reset" value="Cancel">
-									</form>
-									<script language="javascript">
-										async function postData(url = '', data = {}) {
-											const response = await fetch(url, {
-												method: 'POST', 
-												mode: 'cors', 
-												cache: 'no-cache', 
-												credentials: 'same-origin', 
-												headers: {
-												'Content-Type': 'application/json'
-												},
-												redirect: 'follow', 
-												referrerPolicy: 'no-referrer', 
-												body: JSON.stringify(data) 
-											});
-											return response.json(); 
-											}
-										function check(form) { 
-											postData(`https://stark-citadel-51007.herokuapp.com/`, {
-													"game":"morse1",
-													"password":form.pswrd.value
-												}).then(data=>{
-													window.open(data.file+'.html')
-												})
-												.catch(data=>alert("Try again"))
-											
-										}
-									</script>
-										
-							
-						</div>
-					</section>
+<body class="is-preload">
+
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">
+					<div class="glitch" data-text="Task 1">Task 1</div>
+				</h1>
+				<div id="fonthelp">Decode the following and type below! </div>
+				<div id="fonthelp">-.-. .- .-. -.. .. -. .- .-.. -- . .--. .... .. ... - ---</div>
+				<!--LOGIN PAGE-->
+				<form name="login">
+					Your Answer <h6>*Includes Spaces</h6><input id="myInput" type="password" name="pswrd" />
+					<br>
+					<input type="button" id="myBtn" onclick="check(this.form)" value="Submit" />
+					<input type="reset" value="Cancel" href="werta-reths-sfgsdv-sfd.html">
+				</form>
+				<script language="javascript">
+					async function postData(url = '', data = {}) {
+						const response = await fetch(url, {
+							method: 'POST',
+							mode: 'cors',
+							cache: 'no-cache',
+							credentials: 'same-origin',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							redirect: 'follow',
+							referrerPolicy: 'no-referrer',
+							body: JSON.stringify(data)
+						});
+						return response.json();
+					}
+					function check(form) {
+						postData(`https://stark-citadel-51007.herokuapp.com/`, {
+							"game": "morse1",
+							"password": form.pswrd.value
+						}).then(data => {
+							window.open(data.file + '.html')
+						})
+							.catch(data => alert("Try again"))
+
+					}
+					var input = document.getElementById("myInput");
+					input.addEventListener("keyup", function (event) {
+						if (event.keyCode === 13) {
+							event.preventDefault();
+							document.getElementById("myBtn").click();
+						}
+					});
+				</script>
+
 
 			</div>
+		</section>
+
+	</div>
 
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
