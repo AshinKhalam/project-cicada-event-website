@@ -33,9 +33,9 @@
 					<form name="login">
 						Username<input type="text" name="userid" />
 						<br>
-						Password<input type="password" name="pswrd" />
+						Password<input id="myInput" type="password" name="pswrd" />
 						<br>
-						<input type="button" onclick="check(this.form)" value="Login" />
+						<input type="button" id="myBtn" onclick="check(this.form)" value="Login" />
 						<input type="reset" value="Cancel" href="THMorse1.html">
 					</form>
 					<script language="javascript">
@@ -62,8 +62,17 @@
 								window.open("THcong.html")
 							})
 								.catch(data => alert("The Inspect says it all"))
-
 						}
+						var input = document.getElementById("myInput");
+						input.addEventListener("keyup", function (event) {
+							if (event.keyCode === 13) {
+								event.preventDefault();
+								document.getElementById("myBtn").click();
+							}
+						});
+
+
+
 					</script>
 				</div>
 
