@@ -31,8 +31,8 @@
 				<form name="login">
 					Your Answer <h6>*Includes Spaces</h6><input id="myInput" type="password" name="pswrd" />
 					<br>
-					<input type="button" id="myBtn" onclick="check(this.form)" value="Submit" />
-					<input type="reset" value="Cancel" href="werta-reths-sfgsdv-sfd.html">
+					<input type="button" id="submit-btn" onclick="check(this.form)" value="Submit" />
+					<input type="button" value="Cancel" href="werta-reths-sfgsdv-sfd.html">
 				</form>
 				<script language="javascript">
 					async function postData(url = '', data = {}) {
@@ -60,11 +60,15 @@
 							.catch(data => alert("Try again"))
 
 					}
-					var input = document.getElementById("myInput");
-					input.addEventListener("keyup", function (event) {
-						if (event.keyCode === 13) {
+					window.addEventListener("keydown",function(event){
+						if(event.key=="Enter"){
 							event.preventDefault();
-							document.getElementById("myBtn").click();
+							console.log({
+								pswrd:document.getElementById("myInput").value
+							})
+							check({
+								pswrd:document.getElementById("myInput")
+							})
 						}
 					});
 				</script>

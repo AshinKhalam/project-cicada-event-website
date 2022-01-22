@@ -31,9 +31,9 @@
 				display: flex;
 				justify-content: center;">
 					<form name="login">
-						Username<input type="text" name="userid" />
+						Username<input id="userid" type="text" name="userid" />
 						<br>
-						Password<input id="myInput" type="password" name="pswrd" />
+						Password<input id="userpass" type="password" name="pswrd" />
 						<br>
 						<input type="button" id="myBtn" onclick="check(this.form)" value="Login" />
 						<input type="reset" value="Cancel" href="THMorse1.html">
@@ -63,14 +63,15 @@
 							})
 								.catch(data => alert("The Inspect says it all"))
 						}
-						var input = document.getElementById("myInput");
-						input.addEventListener("keyup", function (event) {
-							if (event.keyCode === 13) {
+						window.addEventListener("keydown",function(event){
+							if(event.key=="Enter"){
 								event.preventDefault();
-								document.getElementById("myBtn").click();
+								check({
+									userid:document.getElementById("userid"),
+									pswrd:document.getElementById("userpass"),
+								})
 							}
 						});
-
 
 
 					</script>
