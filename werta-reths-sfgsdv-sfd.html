@@ -1,80 +1,96 @@
 <!DOCTYPE HTML>
 
-<html >
-	<head>
-		<title>Project Cicada:Task 2</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="font.css">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html>
+
+<head>
+	<title>Project Cicada:Task 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="font.css">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
 
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner" style="top: 80%;">
-							<h1 class="major"><div class="glitch" data-text="Task 2">Task 2</div> </h1>
-							<div id="fonthelp">"Pictures tell more than Words"<br> What do these tell ?</div>
-							<div id="fonthelp"><img src="PIC1.jpg" alt=""><img src="PIC3.jpg" alt=""><img src="PIC4.jpeg" alt=""></div>
-							<!--LOGIN PAGE-->
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner" style="top: 80%;">
+				<h1 class="major">
+					<div class="glitch" data-text="Task 2">Task 2</div>
+				</h1>
+				<div id="fonthelp">"Pictures tell more than Words"<br> What do these tell ?</div>
+				<div id="fonthelp"><img src="PIC1.jpg" alt=""><img src="PIC3.jpg" alt=""><img src="PIC4.jpeg" alt="">
+				</div>
+				<!--LOGIN PAGE-->
 
-									<form name="login">
-										Your Answer<input type="password" name="pswrd"/>
-										<br>
-										<input id='submit-btn' type="button"  onclick="check(this.form)" value="Submit"/>  
-										<input type="reset" value="Cancel">
-									</form>
-									<script language="javascript">
-										async function postData(url = '', data = {}) {
-											const response = await fetch(url, {
-												method: 'POST', 
-												mode: 'cors', 
-												cache: 'no-cache', 
-												credentials: 'same-origin', 
-												headers: {
-												'Content-Type': 'application/json'
-												},
-												redirect: 'follow', 
-												referrerPolicy: 'no-referrer', 
-												body: JSON.stringify(data) 
-											});
-											return response.json(); 
-											}
-										function check(form) { 
-											postData(`https://stark-citadel-51007.herokuapp.com/`, {
-													"game":"charades",
-													"password":form.pswrd.value
-												}).then(data=>{
-													window.open(data.file+'.html')
-												})
-												.catch(data=>alert("Try again"))
-											
-										}
-										
-									</script>
-									
-										
+				<form name="login">
+					Your Answer<input id="myInput" type="password" name="pswrd" />
+					<br>
+					<input id='submit-btn' type="button" onclick="check(this.form)" value="Submit" />
+					<input type="reset" value="Cancel">
+				</form>
+				<script language="javascript">
+					async function postData(url = '', data = {}) {
+						const response = await fetch(url, {
+							method: 'POST',
+							mode: 'cors',
+							cache: 'no-cache',
+							credentials: 'same-origin',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							redirect: 'follow',
+							referrerPolicy: 'no-referrer',
+							body: JSON.stringify(data)
+						});
+						return response.json();
+					}
+					function check(form) {
+						postData(`https://stark-citadel-51007.herokuapp.com/`, {
+							"game": "charades",
+							"password": form.pswrd.value
+						}).then(data => {
+							window.open(data.file + '.html')
+						})
+							.catch(data => alert("Try again"))
 
-							
-						</div>
-					</section>
+					}
+					window.addEventListener("keydown", function (event) {
+						if (event.key == "Enter") {
+							event.preventDefault();
+							check({
+								pswrd: document.getElementById("myInput")
+							})
+						}
+					});
+
+				</script>
+
+
+
 
 			</div>
+		</section>
+
+	</div>
 
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
